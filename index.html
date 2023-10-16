@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <p>
+      <script>
+
+        let numOfCourses = parseInt(prompt("How many course did you finish ?", "0"));
+        if (isNaN(numOfCourses) || numOfCourses < 0){
+            document.writeln("Invalid Input!<br>");
+        }
+        else{
+            document.writeln(numOfCourses + "<br>");
+            let courseMarks = [];
+            let sum = 0;
+            for(let i = 0; i < numOfCourses; i++){
+                courseMarks[i] = prompt("Enter the mark of course " + i + " :", "0");
+                while (isNaN(courseMarks[i])){
+                    document.write("Invalid Input!");
+                    courseMarks[i] = prompt("Enter the mark of course " + i + " :", "0");
+                }
+                sum += parseInt(courseMarks[i]);
+                document.writeln(courseMarks[i] + "<br>");
+            }
+            let average = sum / numOfCourses;
+            document.writeln("The average is " + average + "<br>");
+            
+            average = average.toFixed(2);
+            if (average >= 90 && average <= 100) {
+                document.writeln("Your grade is A+<br>");
+            } else if (average >= 80 && average <= 89) {
+                document.writeln("Your grade is B<br>");
+            } else if (average >= 70 && average <= 79) {
+                document.writeln("Your grade is C<br>");
+            } else if (average >= 60 && average <= 69) {
+                document.writeln("Your grade is D<br>");
+            } else if (average < 60){
+                document.writeln("Your grade is F<br>");
+            }
+            else{
+                document.writeln("Sorry All the marks have to be from minimum 0 to maximum 100!<br>");
+            }
+        }
+
+        // Made by Guillaume ROUSSELIN and Mikhaïl BENALI
+      </script>
+    </p>
+  </body>
+</html>
